@@ -27,6 +27,10 @@ fn main() {
 one interesting thing i found is instead of normal `println` here we are calling `println!`, the `!`
 means we are calling a `macro`(kinda c macro) not a normal function.
 
+### Crate
+ Crates in rust are kinda of dependencies/npm packages in binary or library, that we can use in our application, these can
+be downloaded using cargo(package manager).
+
 
 
 
