@@ -1,4 +1,4 @@
-// During the time when i wrote this, i have 0idea about rust, this program is just to 
+// During the time when i wrote this, i have 0idea about rust, this program is just to
 // understand some highlvel stuffs about rust also to get around with syntax and other stuff,
 // recommended by the official rust book.
 use rand::Rng;
@@ -11,6 +11,11 @@ fn main() {
     let secret_number = rand::thread_rng().gen_range(1..=100);
 
     println!("The secret number is: {secret_number}");
+
+    // let mutable_var: i32 = 10;
+    // mutable_var = 11; // cannot do this, coz by default all variables are immutable in rust
+    //
+    // println!("{mutable_var}");
 
     loop {
         let mut guess = String::new();
