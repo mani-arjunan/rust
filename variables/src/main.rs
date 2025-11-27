@@ -35,12 +35,36 @@ fn main() {
     // println!("{x} {y} {z}");
     // println!("{}", tup1.0); // this is also possible
     // arrays
-    let arr: [i16; 5] = [1, 2, 3, 5, 6]; // this is one way of declaring array [i16-> type; 5 ->
-    // size]
-    let arr = [1, 2, 3, 5, 6]; // this is another way of declaring array, where the size
-    // and type are determined by the compiler.
-    let arr = [3; 5]; // this is another way of initializing where if u want to repeat a
-    // specific number with n times, in this case number 3 for 5times.
+    // let arr: [i16; 5] = [1, 2, 3, 5, 6]; // this is one way of declaring array [i16-> type; 5 ->
+    // // size]
+    // let arr = [1, 2, 3, 5, 6]; // this is another way of declaring array, where the size
+    // // and type are determined by the compiler.
+    // let arr = [3; 5]; // this is another way of initializing where if u want to repeat a
+    // // specific number with n times, in this case number 3 for 5times.
+    //
+    // println!("{}", arr[0]);
+    //
+    // let str = String::from("Manikandan");
+    // {
+    //     let str2 = str.clone();
+    //     println!("{str}");
+    //     println!("{str2}");
+    // }
+    // println!("{str}");
+    // let s = string::from("hello");  // s comes into scope
+    // let s = takes_ownership(s);             // s's value moves into the function...
+    // println!("{s}")
+    let mut str = String::from("Manikandan");
 
-    println!("{}", arr[0]);
+    println!("{}", str); // Manikandan
+
+    modify_str(&mut str); 
+
+    println!("{}", str); // Manikandan Arjunan
+}
+
+fn modify_str(str: &mut String) {
+    if str == "Manikandan" {
+        str.push_str(" Arjunan")
+    }
 }
