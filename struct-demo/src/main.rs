@@ -52,6 +52,10 @@ impl Rectangle {
     fn area(&self) -> u16 {
         return self.width * self.height;
     }
+
+    fn area_transfer(self) -> u16 {
+        return self.width * self.height;
+    }
 }
 
 fn main() {
@@ -60,9 +64,9 @@ fn main() {
         height: 20,
     };
     let area =  Rectangle::area(&r1);
-    println!("{}",area);
+    println!("{:?}",area);
     //
-    // println!("Area: {}", r1.area());
-    // println!("After value width: {}", r1.width); // this only works coz we have 
-    // // borrowed rectangle as &self, normal self also works, but it transfers the ownership
+    // println!("Area: {}", r1.area_transfer());
+    // println!("After value width: {:?}", r1); // this only works coz we have 
+    // borrowed rectangle as &self, normal self also works, but it transfers the ownership
 }
