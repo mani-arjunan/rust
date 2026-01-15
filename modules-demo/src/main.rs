@@ -1,7 +1,6 @@
 mod user;
 mod employee;
 
-
 use user::set_user_details;
 use employee::it;
 use employee::civil;
