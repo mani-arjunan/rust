@@ -42,7 +42,8 @@ fn rank_person_hashmap() {
 }
 
 fn iterate_over_hashmap(map: HashMap<String, i16>) {
-    for (key, value) in map {
+    for (key, value) in map { // if u are using without reference, this is basically transferring
+        // the ownership, use it with reference &map
         println!("{}: {}", key, value);
     }
 
