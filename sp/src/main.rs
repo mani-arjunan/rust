@@ -30,28 +30,57 @@ use std::{cell::RefCell, rc::Rc};
 // }
 //
 //
-struct Student {
-    name: RefCell<String>,
-}
-
-trait Update {
-    fn update_name(&self);
-}
-
-impl Update for Student {
-    fn update_name(&self) {
-        self.name.borrow_mut().push('0');
-    }
-}
-
+// struct Student {
+//     name: RefCell<String>,
+// }
+//
+// trait Update {
+//     fn update_name(&self);
+// }
+//
+// impl Update for Student {
+//     fn update_name(&self) {
+//         self.name.borrow_mut().push('0');
+//     }
+// }
+//
+// fn main() {
+//     let stu1 = Student {
+//         name: RefCell::new(String::from("XXX"))
+//     };
+//
+//     println!("Before Update -> {:?}", &stu1.name);
+//     stu1.update_name();
+//     println!("After Update -> {:?}", &stu1.name);
+// }
+//
+//
+//
+//
 fn main() {
-    let stu1 = Student {
-        name: RefCell::new(String::from("XXX"))
-    };
+    let a = Rc::new(RefCell::new(String::from("Manikandan")));
+    let b = Rc::clone(&a);
+    let c = Rc::clone(&a);
 
-    println!("Before Update -> {:?}", &stu1.name);
-    stu1.update_name();
-    println!("After Update -> {:?}", &stu1.name);
+    println!("Before Update");
+    println!("{:?}", a);
+    println!("{:?}", c);
+    println!("{:?}", b);
+
+    String::push_str(&mut a.borrow_mut(), " Arjunan");
+    println!("After Update");
+    println!("{:?}", a);
+    println!("{:?}", c);
+    println!("{:?}", b);
 }
+
+
+
+
+
+
+
+
+
 
 
