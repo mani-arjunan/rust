@@ -57,6 +57,23 @@ use std::{cell::RefCell, rc::Rc};
 //
 //
 //
+//
+// Rc -> shared state where it allocates the value on the heap one time
+// and assigns the pointer to that heap for all the variables
+// eg: let a = Rc::new(1 | String::from("Masda") || vec![asdasd]);
+// all goes to heap, only change is a -> points to that heap.
+// let b = Rc::clone(&a). doesn't clones the value of the heap
+// instead clones the pointer value of a and store it to b.
+// a -> heap
+// b -> heap
+// why &a -> rust borrow checker rules, if its Rc::clone(a), now a ownership got transferred into
+// clone function, so a cannot be used further.
+//
+//
+// RefCell -> if we want to mutate an immutable reference, rust provides a simple way with RefCell
+// to mutate an immutable reference on run time.
+//
+// Arc -> shared state, but for threads.
 fn main() {
     let a = Rc::new(RefCell::new(String::from("Manikandan")));
     let b = Rc::clone(&a);
